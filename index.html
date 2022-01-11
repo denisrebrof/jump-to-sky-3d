@@ -34,7 +34,9 @@
       }
 
       function showFullscreenAd(){
+        console.log("fff - showFullscreenAd")
         vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
+        console.log("fff - showFullscreenAd - then")
           if(data.result){
             window.unityInstance.SendMessage('VKSDK', 'OnInterstitialShown');
           }else{
