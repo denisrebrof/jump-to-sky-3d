@@ -35,7 +35,8 @@
 
       function showFullscreenAd(){
         console.log("fff - showFullscreenAd")
-        vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
+        try {
+		  vkBridge.send('VKWebAppShowNativeAds',{ad_format:"interstitial"}).then(data => {
         console.log("fff - showFullscreenAd - then")
           if(data.result){
             window.unityInstance.SendMessage('VKSDK', 'OnInterstitialShown');
@@ -43,6 +44,11 @@
             window.unityInstance.SendMessage('VKSDK', 'OnInterstitialError', JSON.stringify(data.result));
           }
           console.log(data);});
+		}
+		catch (e) {
+		   window.unityInstance.SendMessage('VKSDK', 'OnInterstitialError', JSON.stringify(e));
+		}
+
       }
 
       function showRewardedAd(){
