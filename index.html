@@ -12,7 +12,11 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', 'G-YSW25FYN5D', { cookie_flags: 'SameSite=None;Secure' });
+		gtag('config', 'G-YSW25FYN5D', {
+			cookie_flags: 'SameSite=None;Secure',
+			'custom_map': {'dimension2': 'ab_test_property_setup'}
+			}
+		);
 	</script>
 	<script>
 		window.onerror = function(message, source, lineno, colno, error) {
@@ -220,15 +224,15 @@
 		var isChrome =  isIOSChrome || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isOpera === false && isIEedge === false);
 		
 		var buildUrl = "Build";
-		var loaderUrl = buildUrl + "/GAB.loader.js";
+		var loaderUrl = buildUrl + "/JTSBuild.loader.js";
 		var config = {
-        dataUrl: buildUrl + "/GAB.data.unityweb",
-        frameworkUrl: buildUrl + "/GAB.framework.js.unityweb",
-        codeUrl: buildUrl + "/GAB.wasm.unityweb",
+        dataUrl: buildUrl + "/JTSBuild.data.unityweb",
+        frameworkUrl: buildUrl + "/JTSBuild.framework.js.unityweb",
+        codeUrl: buildUrl + "/JTSBuild.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Upreality",
         productName: "Jump To Sky - 3D Parcour",
-        productVersion: "1.1",
+        productVersion: "1.2",
       };
 
 		var container = document.querySelector("#gameContainer");
